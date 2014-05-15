@@ -5,28 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>pl.agileit</groupId>
-        <artifactId>ewallet</artifactId>
+        <groupId>pl.agileit.ewallet</groupId>
+        <artifactId>components</artifactId>
         <version>0.0.1</version>
     </parent>
 
-    <groupId>pl.agileit.ewallet</groupId>
-    <artifactId>components</artifactId>
+    <groupId>pl.agileit.ewallet.components</groupId>
+    <artifactId>transaction</artifactId>
     <version>0.0.1</version>
     <packaging>pom</packaging>
 
-    <name>Ewallet Components</name>
+    <name>Ewallet Transaction component</name>
 
     <modules>
-        <module>transaction</module>
     </modules>
 
-
-    <dependencies>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${google.guava.version}</version>
-        </dependency>
-    </dependencies>
 </project>
