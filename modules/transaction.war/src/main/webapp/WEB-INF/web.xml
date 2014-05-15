@@ -6,8 +6,8 @@
     <display-name>Restful Web Application</display-name>
 
     <!--<context-param>-->
-        <!--<param-name>resteasy.scan</param-name>-->
-        <!--<param-value>true</param-value>-->
+    <!--<param-name>resteasy.scan</param-name>-->
+    <!--<param-value>true</param-value>-->
     <!--</context-param>-->
 
     <listener>

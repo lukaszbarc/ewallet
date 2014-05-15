@@ -44,7 +44,7 @@ public final class TransactionRestDto {
         return value;
     }
 
-    public void setValue(BigDecimal value) {
+    public void setValue(final BigDecimal value) {
         this.value = value;
     }
 

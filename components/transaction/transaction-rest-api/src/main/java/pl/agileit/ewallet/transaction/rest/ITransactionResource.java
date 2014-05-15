@@ -2,10 +2,7 @@ package pl.agileit.ewallet.transaction.rest;
 
 import pl.agileit.ewallet.transaction.rest.dto.TransactionRestDto;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 
 /**
  * @author lukasz barc
@@ -13,9 +10,17 @@ import javax.ws.rs.Produces;
 @Path("/transactions")
 public interface ITransactionResource {
 
+    String JSON = "application/json";
+
     @POST
     @Path("/register")
-    @Consumes("application/json")
-    @Produces("application/json")
+    @Consumes(JSON)
+    @Produces(JSON)
     void registerTransaction(TransactionRestDto transactionRestDto);
+
+    @GET
+    @Path("/{identity}")
+    @Consumes(JSON)
+    @Produces(JSON)
+    TransactionRestDto getTransaction(@PathParam("identity") long txId);
 }

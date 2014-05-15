@@ -16,7 +16,7 @@ public final class TransactionRestDtoBuilder {
     private TransactionRestDtoBuilder() {
     }
 
-    public static TransactionRestDtoBuilder aTransactionDto() {
+    public static TransactionRestDtoBuilder aTransactionRestDto() {
         return new TransactionRestDtoBuilder();
     }
 

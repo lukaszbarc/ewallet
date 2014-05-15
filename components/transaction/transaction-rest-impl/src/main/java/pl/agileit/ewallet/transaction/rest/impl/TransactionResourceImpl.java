@@ -24,6 +24,14 @@ public final class TransactionResourceImpl implements ITransactionResource {
 
     }
 
+    @Override
+    public TransactionRestDto getTransaction(final long txId) {
+        LOGGER.trace(">>getTransaction({})", txId);
+        return transactionRestAssembler.toTransactionRestDto(
+                transactionService.getTransaction(txId)
+        );
+    }
+
     public void setTransactionService(final ITransactionService transactionService) {
         this.transactionService = transactionService;
     }

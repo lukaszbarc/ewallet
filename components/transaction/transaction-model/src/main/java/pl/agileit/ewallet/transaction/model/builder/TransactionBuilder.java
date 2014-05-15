@@ -36,6 +36,6 @@ public final class TransactionBuilder {
     }
 
     public Transaction build() {
-        return  new Transaction(id, user, value);
+        return new Transaction(id, user, value);
     }
 }

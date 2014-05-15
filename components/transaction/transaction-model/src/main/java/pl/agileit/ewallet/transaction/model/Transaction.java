@@ -5,7 +5,7 @@ import static com.google.common.base.Objects.toStringHelper;
 /**
  * @author lukasz barc
  */
-public final  class Transaction {
+public final class Transaction {
 
     private final long id;
     private final TransactionOwner user;

@@ -8,4 +8,6 @@ import pl.agileit.ewallet.transaction.model.Transaction;
 public interface ITransactionService {
 
     void registerTransaction(long userId, Transaction transaction);
+
+    Transaction getTransaction(long txId);
 }
