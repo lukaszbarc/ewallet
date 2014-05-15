@@ -13,8 +13,8 @@ public class TransactionDaoImpl implements ITransactionDao {
 
     @Override
     public void save(final TransactionDto transactionDto) {
-        jdbcTemplate.update("INSERT INTO TX_TRANSACTION (ID, ID_USER, TRANSACTION_VALUE) VALUES (?, ?, ?)",
-                transactionDto.getId(), transactionDto.getUserId(), transactionDto.getValue());
+        jdbcTemplate.update("INSERT INTO TX_TRANSACTION (ID_USER, TRANSACTION_VALUE) VALUES (?, ?)",
+                transactionDto.getUserId(), transactionDto.getValue());
     }
 
     public void setJdbcTemplate(final JdbcTemplate jdbcTemplate) {

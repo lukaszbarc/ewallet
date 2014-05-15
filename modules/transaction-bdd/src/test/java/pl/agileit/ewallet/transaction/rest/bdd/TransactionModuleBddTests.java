@@ -23,7 +23,6 @@ public class TransactionModuleBddTests {
                 .everything(true)
                 .body(TransactionRestDtoBuilder
                         .aTransactionDto()
-                        .withId(1L)
                         .withUserId(100L)
                         .withValue(BigDecimal.valueOf(50L))
                         .build())
@@ -33,7 +32,7 @@ public class TransactionModuleBddTests {
                 .then()
                 .log()
                 .everything(true)
-                .statusCode(200);
+                .statusCode(204);
 
 
 

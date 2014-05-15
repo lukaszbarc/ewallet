@@ -5,21 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>pl.agileit</groupId>
-        <artifactId>ewallet</artifactId>
+        <groupId>pl.agileit.ewallet</groupId>
+        <artifactId>modules</artifactId>
         <version>0.0.1</version>
     </parent>
 
-    <groupId>pl.agileit.ewallet</groupId>
-    <artifactId>modules</artifactId>
+    <groupId>pl.agileit.ewallet.modues</groupId>
+    <artifactId>transaction-mysql-scripts</artifactId>
     <version>0.0.1</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
-    <name>Ewallet Modules</name>
+    <name>Ewallet Transaction MySql scripts module</name>
 
-    <modules>
-        <module>transaction.war</module>
-        <module>transaction-bdd</module>
-        <module>transaction-mysql-scripts</module>
-    </modules>
+
 </project>

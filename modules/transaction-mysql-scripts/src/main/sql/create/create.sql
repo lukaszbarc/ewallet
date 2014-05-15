@@ -1,0 +1,6 @@
+CREATE TABLE TX_TRANSACTION (
+  ID bigint not null AUTO_INCREMENT,
+  ID_USER bigint not null,
+  TRANSACTION_VALUE decimal (10,2),
+  PRIMARY KEY (ID)
+);
