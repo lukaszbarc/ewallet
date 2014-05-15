@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 /**
  * @author lukasz barc
  */
-public class TransactionValueBuilder {
+public final class TransactionValueBuilder {
     private BigDecimal value;
 
     private TransactionValueBuilder() {
@@ -17,13 +17,12 @@ public class TransactionValueBuilder {
         return new TransactionValueBuilder();
     }
 
-    public TransactionValueBuilder withValue(BigDecimal value) {
+    public TransactionValueBuilder withValue(final BigDecimal value) {
         this.value = value;
         return this;
     }
 
     public TransactionValue build() {
-        TransactionValue transactionValue = new TransactionValue(value);
-        return transactionValue;
+        return new TransactionValue(value);
     }
 }

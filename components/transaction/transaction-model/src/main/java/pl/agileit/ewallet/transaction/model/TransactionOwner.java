@@ -5,10 +5,10 @@ import static com.google.common.base.Objects.toStringHelper;
 /**
  * @author lukasz barc
  */
-public class TransactionOwner {
+public final class TransactionOwner {
     private final long id;
 
-    public TransactionOwner(long id) {
+    public TransactionOwner(final long id) {
         this.id = id;
     }
 

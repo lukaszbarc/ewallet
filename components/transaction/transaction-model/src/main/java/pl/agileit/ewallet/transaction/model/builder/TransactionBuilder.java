@@ -7,7 +7,7 @@ import pl.agileit.ewallet.transaction.model.TransactionValue;
 /**
  * @author lukasz barc
  */
-public class TransactionBuilder {
+public final class TransactionBuilder {
 
     private long id;
     private TransactionOwner user;
@@ -20,23 +20,22 @@ public class TransactionBuilder {
         return new TransactionBuilder();
     }
 
-    public TransactionBuilder withId(long id) {
+    public TransactionBuilder withId(final long id) {
         this.id = id;
         return this;
     }
 
-    public TransactionBuilder withUser(TransactionOwner user) {
+    public TransactionBuilder withUser(final TransactionOwner user) {
         this.user = user;
         return this;
     }
 
-    public TransactionBuilder withValue(TransactionValue value) {
+    public TransactionBuilder withValue(final TransactionValue value) {
         this.value = value;
         return this;
     }
 
     public Transaction build() {
-        Transaction transaction = new Transaction(id, user, value);
-        return transaction;
+        return  new Transaction(id, user, value);
     }
 }

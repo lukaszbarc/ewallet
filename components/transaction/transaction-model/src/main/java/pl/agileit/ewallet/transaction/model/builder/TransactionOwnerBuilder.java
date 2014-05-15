@@ -5,7 +5,7 @@ import pl.agileit.ewallet.transaction.model.TransactionOwner;
 /**
  * @author lukasz barc
  */
-public class TransactionOwnerBuilder {
+public final class TransactionOwnerBuilder {
     private long id;
 
     private TransactionOwnerBuilder() {
@@ -15,13 +15,12 @@ public class TransactionOwnerBuilder {
         return new TransactionOwnerBuilder();
     }
 
-    public TransactionOwnerBuilder withId(long id) {
+    public TransactionOwnerBuilder withId(final long id) {
         this.id = id;
         return this;
     }
 
     public TransactionOwner build() {
-        TransactionOwner transactionOwner = new TransactionOwner(id);
-        return transactionOwner;
+        return new TransactionOwner(id);
     }
 }

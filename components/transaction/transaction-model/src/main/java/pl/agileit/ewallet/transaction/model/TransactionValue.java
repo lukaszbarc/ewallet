@@ -7,11 +7,11 @@ import static com.google.common.base.Objects.toStringHelper;
 /**
  * @author lukasz barc
  */
-public class TransactionValue {
+public final class TransactionValue {
 
     private final BigDecimal value;
 
-    public TransactionValue(BigDecimal value) {
+    public TransactionValue(final BigDecimal value) {
         this.value = value;
     }
 

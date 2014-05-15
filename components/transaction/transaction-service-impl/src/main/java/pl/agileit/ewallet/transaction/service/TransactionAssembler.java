@@ -10,7 +10,7 @@ import static pl.agileit.ewallet.transaction.dao.dto.builder.TransactionDtoBuild
  * @author lukasz barc
  */
 public class TransactionAssembler {
-    public TransactionDto toDto(Transaction transaction) {
+    public TransactionDto toDto(final Transaction transaction) {
         return aTransactionDto()
                 .withId(transaction.getId())
                 .withUserId(transaction.getUser().getId())

@@ -7,13 +7,15 @@ import static com.google.common.base.Objects.toStringHelper;
 /**
  * @author lukasz barc
  */
-public class Transaction {
+public final  class Transaction {
 
     private final long id;
     private final TransactionOwner user;
     private final TransactionValue value;
 
-    public Transaction(long id, TransactionOwner user, TransactionValue value) {
+    public Transaction(final long id,
+                       final TransactionOwner user,
+                       final TransactionValue value) {
         this.id = id;
         this.user = user;
         this.value = value;
