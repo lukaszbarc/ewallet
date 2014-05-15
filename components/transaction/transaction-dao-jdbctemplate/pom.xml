@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>pl.agileit.ewallet.components</groupId>
+        <artifactId>transaction</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>transaction-dao-jdbctemplate</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>Ewallet Transaction dao jdbctemplate component</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>pl.agileit.ewallet.components</groupId>
+            <artifactId>transaction-dao-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+    </dependencies>
+</project>
