@@ -5,22 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>pl.agileit.ewallet</groupId>
-        <artifactId>components</artifactId>
+        <groupId>pl.agileit.ewallet.components</groupId>
+        <artifactId>transaction</artifactId>
         <version>0.0.1</version>
     </parent>
 
     <groupId>pl.agileit.ewallet.components</groupId>
-    <artifactId>transaction</artifactId>
+    <artifactId>transaction-service-impl</artifactId>
     <version>0.0.1</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
-    <name>Ewallet Transaction component</name>
-
-    <modules>
-        <module>transaction-model</module>
-        <module>transaction-service-api</module>
-        <module>transaction-service-impl</module>
-    </modules>
-
+    <name>Ewallet Transaction service impl component</name>
 </project>
