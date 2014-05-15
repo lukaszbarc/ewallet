@@ -28,7 +28,7 @@ public final class TransactionRestDto {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 
@@ -36,7 +36,7 @@ public final class TransactionRestDto {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(final long userId) {
         this.userId = userId;
     }
 

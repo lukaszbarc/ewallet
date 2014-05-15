@@ -12,7 +12,6 @@ import pl.agileit.ewallet.transaction.service.ITransactionService;
 public final class TransactionResourceImpl implements ITransactionResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TransactionResourceImpl.class);
-
     private ITransactionService transactionService;
     private TransactionRestAssembler transactionRestAssembler;
 
@@ -25,11 +24,11 @@ public final class TransactionResourceImpl implements ITransactionResource {
 
     }
 
-    public void setTransactionService(ITransactionService transactionService) {
+    public void setTransactionService(final ITransactionService transactionService) {
         this.transactionService = transactionService;
     }
 
-    public void setTransactionRestAssembler(TransactionRestAssembler transactionRestAssembler) {
+    public void setTransactionRestAssembler(final TransactionRestAssembler transactionRestAssembler) {
         this.transactionRestAssembler = transactionRestAssembler;
     }
 }
