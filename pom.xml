@@ -21,10 +21,12 @@
         <fest-assert.version>1.4</fest-assert.version>
         <spring.version>3.2.4.RELEASE</spring.version>
         <resteasy.version>3.0.4.Final</resteasy.version>
+        <rest-assured.version>2.3.1</rest-assured.version>
     </properties>
 
     <modules>
         <module>components</module>
+        <module>modules</module>
     </modules>
 
     <dependencies>
@@ -81,6 +83,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- EOF TESTS -->

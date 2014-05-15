@@ -7,11 +7,14 @@ import static com.google.common.base.Objects.toStringHelper;
 /**
  * @author lukasz barc
  */
-public class TransactionRestDto {
+public final class TransactionRestDto {
 
-    private final long id;
-    private final long userId;
-    private final BigDecimal value;
+    private long id;
+    private long userId;
+    private BigDecimal value;
+
+    public TransactionRestDto() {
+    }
 
     public TransactionRestDto(final long id,
                               final long userId,
@@ -25,12 +28,24 @@ public class TransactionRestDto {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public long getUserId() {
         return userId;
     }
 
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
     public BigDecimal getValue() {
         return value;
+    }
+
+    public void setValue(BigDecimal value) {
+        this.value = value;
     }
 
     @Override
