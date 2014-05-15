@@ -8,9 +8,7 @@ import pl.agileit.ewallet.transaction.model.Transaction;
 import pl.agileit.ewallet.transaction.service.TransactionAssembler;
 
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 import static pl.agileit.ewallet.transaction.model.builder.TransactionBuilder.aTransaction;
 
 /**

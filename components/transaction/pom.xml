@@ -23,6 +23,8 @@
         <module>transaction-dao-jdbctemplate</module>
         <module>transaction-service-api</module>
         <module>transaction-service-impl</module>
+        <module>transaction-rest-api</module>
+        <module>transaction-rest-impl</module>
     </modules>
 
 </project>

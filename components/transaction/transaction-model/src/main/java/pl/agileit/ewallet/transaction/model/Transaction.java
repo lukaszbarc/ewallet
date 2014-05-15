@@ -1,7 +1,5 @@
 package pl.agileit.ewallet.transaction.model;
 
-import com.google.common.base.Objects;
-
 import static com.google.common.base.Objects.toStringHelper;
 
 /**
