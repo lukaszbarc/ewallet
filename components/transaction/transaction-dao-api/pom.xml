@@ -10,21 +10,16 @@
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>transaction-service-impl</artifactId>
+    <artifactId>transaction-dao-api</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>Ewallet Transaction service impl component</name>
+    <name>Ewallet Transaction dao api component</name>
 
     <dependencies>
         <dependency>
             <groupId>pl.agileit.ewallet.components</groupId>
-            <artifactId>transaction-service-api</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>pl.agileit.ewallet.components</groupId>
-            <artifactId>transaction-dao-api</artifactId>
+            <artifactId>transaction-model</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

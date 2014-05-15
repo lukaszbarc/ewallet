@@ -16,6 +16,9 @@
         <google.guava.version>15.0</google.guava.version>
         <slf4j.version>1.7.5</slf4j.version>
         <log4.version>1.2.17</log4.version>
+        <junit.version>4.11</junit.version>
+        <mockito.version>1.9.5</mockito.version>
+        <fest-assert.version>1.4</fest-assert.version>
     </properties>
 
     <modules>
@@ -23,6 +26,8 @@
     </modules>
 
     <dependencies>
+
+        <!-- LOGGING -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -48,6 +53,27 @@
             <version>${log4.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- EOF LOGGING -->
+
+        <!-- TESTS -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.easytesting</groupId>
+            <artifactId>fest-assert</artifactId>
+            <version>${fest-assert.version}</version>
+        </dependency>
+        <!-- EOF TESTS -->
     </dependencies>
 
 

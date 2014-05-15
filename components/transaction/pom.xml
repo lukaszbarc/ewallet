@@ -19,6 +19,7 @@
 
     <modules>
         <module>transaction-model</module>
+        <module>transaction-dao-api</module>
         <module>transaction-service-api</module>
         <module>transaction-service-impl</module>
     </modules>
