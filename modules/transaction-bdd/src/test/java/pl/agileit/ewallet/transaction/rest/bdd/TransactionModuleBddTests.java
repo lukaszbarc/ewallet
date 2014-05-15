@@ -45,6 +45,19 @@ public class TransactionModuleBddTests {
                 .then()
                 .log().everything()
                 .statusCode(200);
+    }
 
+    @Test
+    public void testGetTransactions() {
+        given()
+                .contentType(ContentType.JSON)
+                .log().everything()
+                .with()
+                .pathParam("identity", 100L)
+                .when()
+                .get("/tx/transactions/{identity}/list")
+                .then()
+                .log().everything()
+                .statusCode(200);
     }
 }

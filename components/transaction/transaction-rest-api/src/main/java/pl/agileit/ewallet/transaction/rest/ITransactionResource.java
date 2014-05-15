@@ -1,8 +1,10 @@
 package pl.agileit.ewallet.transaction.rest;
 
 import pl.agileit.ewallet.transaction.rest.dto.TransactionRestDto;
+import pl.agileit.ewallet.transaction.rest.dto.TransactionRestDtoList;
 
 import javax.ws.rs.*;
+import java.util.List;
 
 /**
  * @author lukasz barc
@@ -23,4 +25,10 @@ public interface ITransactionResource {
     @Consumes(JSON)
     @Produces(JSON)
     TransactionRestDto getTransaction(@PathParam("identity") long txId);
+
+    @GET
+    @Path("/{identity}/list")
+    @Consumes(JSON)
+    @Produces(JSON)
+    TransactionRestDtoList getTransactionByUser(@PathParam("identity")long userId);
 }
