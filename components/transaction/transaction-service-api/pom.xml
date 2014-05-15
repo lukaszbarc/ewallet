@@ -10,10 +10,17 @@
         <version>0.0.1</version>
     </parent>
 
-    <groupId>pl.agileit.ewallet.components</groupId>
     <artifactId>transaction-service-api</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>Ewallet Transaction service api component</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>pl.agileit.ewallet.components</groupId>
+            <artifactId>transaction-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
