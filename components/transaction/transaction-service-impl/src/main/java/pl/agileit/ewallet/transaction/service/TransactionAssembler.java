@@ -5,6 +5,8 @@ import pl.agileit.ewallet.transaction.model.Transaction;
 
 import static pl.agileit.ewallet.transaction.dao.dto.builder.TransactionDtoBuilder.aTransactionDto;
 import static pl.agileit.ewallet.transaction.model.builder.TransactionBuilder.aTransaction;
+import static pl.agileit.ewallet.transaction.model.builder.TransactionCategoryBuilder.aTransactionCategory;
+import static pl.agileit.ewallet.transaction.model.builder.TransactionCostCenterBuilder.aTransactionCostCenter;
 import static pl.agileit.ewallet.transaction.model.builder.TransactionOwnerBuilder.aTransactionOwner;
 import static pl.agileit.ewallet.transaction.model.builder.TransactionValueBuilder.aTransactionValue;
 
@@ -18,18 +20,28 @@ public class TransactionAssembler {
                 .withId(transaction.getId())
                 .withUserId(transaction.getUser().getId())
                 .withValue(transaction.getValue().getValue())
+                .withDescription(transaction.getDescription())
+                .withCategoryId(transaction.getCategory().getId())
+                .withCostCenterId(transaction.getCostCenter().getId())
                 .build();
     }
 
-    public Transaction toTransaction(final TransactionDto byId) {
+    public Transaction toTransaction(final TransactionDto transactionId) {
         return aTransaction()
-                .withId(byId.getId())
+                .withId(transactionId.getId())
                 .withUser(aTransactionOwner()
-                        .withId(byId.getUserId())
+                        .withId(transactionId.getUserId())
                         .build())
                 .withValue(aTransactionValue()
-                        .withValue(byId.getValue())
+                        .withValue(transactionId.getValue())
                         .build())
+                .withCostCenter(aTransactionCostCenter()
+                        .withId(transactionId.getCostCenterId())
+                        .build())
+                .withCategory(aTransactionCategory()
+                        .withId(transactionId.getCategoryId())
+                        .build())
+                .withDescription(transactionId.getDescription())
                 .build();
     }
 }

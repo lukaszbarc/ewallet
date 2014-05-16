@@ -25,16 +25,19 @@ public class TransactionDaoImpl implements ITransactionDao {
     @Override
     public void save(final TransactionDto transactionDto) {
         LOGGER.trace(">>save({})", transactionDto);
-        jdbcTemplate.update("INSERT INTO TX_TRANSACTION (ID_USER, TRANSACTION_VALUE) VALUES (?, ?)",
+        jdbcTemplate.update("INSERT INTO TX_TRANSACTION (ID_USER, TRANSACTION_VALUE, ID_CATEGORY, ID_COST_CENTER, DESCRIPTION) VALUES (?, ?, ?, ?, ?)",
                 transactionDto.getUserId(),
-                transactionDto.getValue()
+                transactionDto.getValue(),
+                transactionDto.getCategoryId(),
+                transactionDto.getCostCenterId(),
+                transactionDto.getDescription()
         );
     }
 
     @Override
     public TransactionDto getById(final long txId) {
         LOGGER.trace(">>getById({})", txId);
-        return jdbcTemplate.queryForObject("SELECT ID, ID_USER, TRANSACTION_VALUE FROM TX_TRANSACTION WHERE ID = ?",
+        return jdbcTemplate.queryForObject("SELECT ID, ID_USER, TRANSACTION_VALUE, ID_COST_CENTER, ID_CATEGORY, DESCRIPTION FROM TX_TRANSACTION WHERE ID = ?",
                 new Object[]{txId},
                 TRANSACTION_DTO_ROW_MAPPER
         );
@@ -44,7 +47,7 @@ public class TransactionDaoImpl implements ITransactionDao {
     public List<TransactionDto> getByUser(final long userId) {
         LOGGER.trace(">>getByUser({})", userId);
 
-        return jdbcTemplate.query("SELECT ID, ID_USER, TRANSACTION_VALUE FROM TX_TRANSACTION WHERE ID_USER = ?",
+        return jdbcTemplate.query("SELECT ID, ID_USER, TRANSACTION_VALUE, ID_COST_CENTER, ID_CATEGORY, DESCRIPTION FROM TX_TRANSACTION WHERE ID_USER = ?",
                 new Object[]{userId},
                 TRANSACTION_DTO_ROW_MAPPER
         );

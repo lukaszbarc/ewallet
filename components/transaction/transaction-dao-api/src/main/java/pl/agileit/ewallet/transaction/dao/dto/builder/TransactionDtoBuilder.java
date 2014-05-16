@@ -11,6 +11,9 @@ public final class TransactionDtoBuilder {
     private long id;
     private long userId;
     private BigDecimal value;
+    private long costCenterId;
+    private long categoryId;
+    private String description;
 
     private TransactionDtoBuilder() {
     }
@@ -34,7 +37,22 @@ public final class TransactionDtoBuilder {
         return this;
     }
 
+    public TransactionDtoBuilder withCostCenterId(final long costCenterId) {
+        this.costCenterId = costCenterId;
+        return this;
+    }
+
+    public TransactionDtoBuilder withCategoryId(final long categoryId) {
+        this.categoryId = categoryId;
+        return this;
+    }
+
+    public TransactionDtoBuilder withDescription(final String description) {
+        this.description = description;
+        return this;
+    }
+
     public TransactionDto build() {
-        return new TransactionDto(id, userId, value);
+        return new TransactionDto(id, userId, value, costCenterId, categoryId, description);
     }
 }

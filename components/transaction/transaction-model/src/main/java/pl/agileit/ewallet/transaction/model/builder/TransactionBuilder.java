@@ -1,8 +1,6 @@
 package pl.agileit.ewallet.transaction.model.builder;
 
-import pl.agileit.ewallet.transaction.model.Transaction;
-import pl.agileit.ewallet.transaction.model.TransactionOwner;
-import pl.agileit.ewallet.transaction.model.TransactionValue;
+import pl.agileit.ewallet.transaction.model.*;
 
 /**
  * @author lukasz barc
@@ -12,6 +10,9 @@ public final class TransactionBuilder {
     private long id;
     private TransactionOwner user;
     private TransactionValue value;
+    private TransactionCostCenter costCenter;
+    private TransactionCategory category;
+    private String description;
 
     private TransactionBuilder() {
     }
@@ -35,7 +36,23 @@ public final class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withCostCenter(final TransactionCostCenter costCenter) {
+        this.costCenter = costCenter;
+        return this;
+    }
+
+    public TransactionBuilder withCategory(final TransactionCategory category) {
+        this.category = category;
+        return this;
+    }
+
+    public TransactionBuilder withDescription(final String description) {
+        this.description = description;
+        return this;
+    }
+
+
     public Transaction build() {
-        return new Transaction(id, user, value);
+        return new Transaction(id, user, value, description, costCenter, category);
     }
 }

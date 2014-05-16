@@ -2,11 +2,11 @@ package pl.agileit.ewallet.transaction.rest.bdd;
 
 import com.jayway.restassured.http.ContentType;
 import org.junit.Test;
-import pl.agileit.ewallet.transaction.rest.dto.builder.TransactionRestDtoBuilder;
 
 import java.math.BigDecimal;
 
 import static com.jayway.restassured.RestAssured.given;
+import static pl.agileit.ewallet.transaction.rest.dto.builder.TransactionRestDtoBuilder.aTransactionRestDto;
 
 /**
  * @author lukasz barc
@@ -19,11 +19,14 @@ public class TransactionModuleBddTests {
                 .contentType(ContentType.JSON)
                 .log()
                 .everything(true)
-                .body(TransactionRestDtoBuilder
-                        .aTransactionRestDto()
-                        .withUserId(100L)
-                        .withValue(BigDecimal.valueOf(50L))
-                        .build())
+                .body(
+                        aTransactionRestDto()
+                                .withUserId(100L)
+                                .withValue(BigDecimal.valueOf(50L))
+                                .withCostCenterId(200L)
+                                .withCategoryId(300L)
+                                .withDescription("description of transaction")
+                                .build())
 
                 .when()
                 .post("/tx/transactions/register")
@@ -39,7 +42,7 @@ public class TransactionModuleBddTests {
                 .contentType(ContentType.JSON)
                 .log().everything()
                 .with()
-                .pathParam("identity", 2L)
+                .pathParam("identity", 3L)
                 .when()
                 .get("/tx/transactions/{identity}")
                 .then()
